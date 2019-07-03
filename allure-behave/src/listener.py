@@ -109,7 +109,7 @@ class AllureListener(object):
         self.stop_scenario(context['scenario'])
 
     def stop_scenario(self, scenario):
-        if scenario.status == 'skipped' and not self.behave_config.show_skipped:
+        if scenario.status == 'skipped':
             self.logger.drop_test(self.current_scenario_uuid)
         else:
             status = scenario_status(scenario)
